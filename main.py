@@ -4,6 +4,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Cal
 
 BOT_TOKEN = "8629762808:AAH-HZAl01nXCB7Psm2uRPrtawgpXFmVrfA"
 ADMIN_ID = 8714423440
+UPI_ID = "kingservice@naviaxis"
 
 SERVICES = {
     "insta_50k": {"name": "Instagram Follower 50K", "price": "₹120"},
