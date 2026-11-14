@@ -1,3 +1,5 @@
+import os
+from flask import Flask
 import logging, os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, CallbackQueryHandler, ContextTypes, filters
@@ -161,3 +163,10 @@ async def main():
     await app.run_polling()
 import asyncio
 asyncio.run(main())
+# Render ko zinda rakhne ke liye
+app = Flask(__name__)
+@app.route('/')
+def home():
+    return "Bot is Running"
+import threading
+threading.Thread(target=lambda: app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))).start()
